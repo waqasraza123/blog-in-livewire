@@ -4,14 +4,12 @@ namespace App\Http\Livewire\Posts;
 
 use App\Models\Post;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ShowPosts extends Component
 {
-    public $posts;
-
-    public function mount(){
-        $this->loadPosts();
-    }
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
 
     /*
      * get event listeners
@@ -30,7 +28,7 @@ class ShowPosts extends Component
      * Post $post will fetch that post
      */
     public function loadNewPost(Post $post){
-        $this->posts->prepend($post);
+        //do something
     }
 
     /*
@@ -38,11 +36,13 @@ class ShowPosts extends Component
      * @return void
      */
     public function loadPosts(){
-        $this->posts = Post::latest()->paginate(5);
+        $this->posts = Post::latest()->get();
     }
 
     public function render()
     {
-        return view('livewire.show-posts');
+        return view('livewire.show-posts', [
+            'posts' => Post::latest()->paginate(5)
+        ]);
     }
 }
