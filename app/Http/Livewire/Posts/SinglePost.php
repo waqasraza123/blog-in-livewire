@@ -47,6 +47,9 @@ class SinglePost extends Component
 
         //flash the message to session
         session()->flash("commentAddedMessage", "Comment posted successfully.");
+
+        //emit the event to ShowComments component
+        $this->emit('commentAdded');
     }
 
     public function render()

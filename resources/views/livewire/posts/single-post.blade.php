@@ -25,4 +25,9 @@
         </form>
     </div>
 
+    {{--show comments--}}
+    <div class="my-3 comments">
+        <livewire:comments.show-comments />
+    </div>
+
 </article>
