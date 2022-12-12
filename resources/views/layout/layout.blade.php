@@ -8,6 +8,7 @@
     <livewire:styles />
 </head>
 <body class="antialiased">
+    @include("layout.nav")
     <div class="container my-5">
         <div class="row">
             <div class="col-3"></div>
