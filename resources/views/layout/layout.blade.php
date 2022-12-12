@@ -9,7 +9,13 @@
 </head>
 <body class="antialiased">
     <div class="container my-5">
-        @yield('content')
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                @yield("content")
+            </div>
+            <div class="col-3"></div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

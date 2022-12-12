@@ -23,9 +23,9 @@
                         </p>
                     </div>
                 </div>
-                <h1 class="display-4 fst-italic">{{$post->title}}</h1>
+                <h1 class="display-4">{{$post->title}}</h1>
                 <p class="lead my-3">{{$post->content}}</p>
-                <p class=""><a href="">Read More</a></p>
+                <p class=""><a href="{{route("posts.single", ["post" => $post->id])}}">Read More</a></p>
             </div>
         </div>
     @endforeach
