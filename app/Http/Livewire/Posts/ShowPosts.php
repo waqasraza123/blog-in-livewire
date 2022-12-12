@@ -39,9 +39,20 @@ class ShowPosts extends Component
         $this->posts = Post::latest()->get();
     }
 
+    /*
+     * delete posts
+     */
+    public function deletePost(Post $post){
+        //delete the post from db
+        $post->delete();
+
+        //flash data to the session
+        session()->flash("postDeletedMessage", "Post deleted successfully.");
+    }
+
     public function render()
     {
-        return view('livewire.show-posts', [
+        return view('livewire.posts.show-posts', [
             'posts' => Post::latest()->paginate(5)
         ]);
     }

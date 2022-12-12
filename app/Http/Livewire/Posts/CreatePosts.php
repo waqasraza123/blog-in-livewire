@@ -65,6 +65,6 @@ class CreatePosts extends Component
      */
     public function render()
     {
-        return view('livewire.create-posts');
+        return view('livewire.posts.create-posts');
     }
 }
