@@ -60,6 +60,9 @@ class CreatePosts extends Component
         $this->emit("postAdded", $post->id);
     }
 
+    /*
+     * render the view
+     */
     public function render()
     {
         return view('livewire.create-posts');

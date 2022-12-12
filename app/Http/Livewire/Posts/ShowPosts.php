@@ -38,7 +38,7 @@ class ShowPosts extends Component
      * @return void
      */
     public function loadPosts(){
-        $this->posts = Post::latest()->get();
+        $this->posts = Post::latest()->paginate(5);
     }
 
     public function render()
