@@ -57,7 +57,7 @@ class CreatePosts extends Component
         $this->content = "";
 
         //emit the post saved event
-        $this->emit("postAdded");
+        $this->emit("postAdded", $post->id);
     }
 
     public function render()
