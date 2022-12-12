@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Posts;
 
 use App\Models\Post;
 use Livewire\Component;
@@ -10,7 +10,7 @@ class CreatePosts extends Component
     public String $title;
     public String $content;
 
-    /**
+    /*
      * validation rules
      * @return string[] = rules
      */
@@ -21,7 +21,7 @@ class CreatePosts extends Component
         ];
     }
 
-    /**
+    /*
      * when the component first renders
      * does not run after initial render
      * @return void
@@ -34,7 +34,7 @@ class CreatePosts extends Component
         ]);
     }
 
-    /**
+    /*
      * save post to database
      * @return void
      */
@@ -55,6 +55,9 @@ class CreatePosts extends Component
         //reset the fields
         $this->title = "";
         $this->content = "";
+
+        //emit the post saved event
+        $this->emit("postAdded");
     }
 
     public function render()
