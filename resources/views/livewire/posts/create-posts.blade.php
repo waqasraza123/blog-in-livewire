@@ -1,7 +1,7 @@
 <div>
     <h1>Create Posts</h1>
     <form wire:submit.prevent="savePost">
-
+        @csrf
         @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session('message') }}

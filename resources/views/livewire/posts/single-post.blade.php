@@ -11,6 +11,7 @@
         @endif
 
         <form wire:submit.prevent="saveComment">
+            @csrf
             <div class="mb-3">
                 @error('comment')<div class="alert alert-danger my-2">{{$message}}</div>@enderror
                 <textarea class="form-control"
